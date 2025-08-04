@@ -1,5 +1,7 @@
 import 'package:phlegeton_character_finance_manager/core/countries/currencies.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+@JsonEnum()
 enum Countries {
   archaeos,
   asteristema,
@@ -34,6 +36,7 @@ extension CountryNames on Countries {
       };
 }
 
+@JsonEnum()
 enum Regions {
   archaeos,
   asteristema,

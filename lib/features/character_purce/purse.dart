@@ -1,7 +1,13 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:phlegeton_character_finance_manager/core/countries/countries.dart';
 import 'package:phlegeton_character_finance_manager/core/countries/currencies.dart';
+import 'package:phlegeton_character_finance_manager/core/json.typedef.dart';
 
+part 'purse.g.dart';
+
+@JsonSerializable()
 class CoinHolding {
+  @JsonKey(name: 'currency')
   final Currencies _currency;
   Currencies get currency => _currency;
 
@@ -9,9 +15,15 @@ class CoinHolding {
 
   CoinHolding({required Currencies currency, this.amount = 0})
       : _currency = currency;
+
+  factory CoinHolding.fromJson(Json json) => _$CoinHoldingFromJson(json);
+
+  Json toJson() => _$CoinHoldingToJson(this);
 }
 
+@JsonSerializable()
 class RegionalPurse {
+  @JsonKey(name: 'region')
   final Regions _region;
   Regions get region => _region;
 
@@ -21,6 +33,10 @@ class RegionalPurse {
   RegionalPurse({required Regions region, required List<CoinHolding> holdings})
       : _holdings = holdings,
         _region = region;
+
+  factory RegionalPurse.fromJson(Json json) => _$RegionalPurseFromJson(json);
+
+  Json toJson() => _$RegionalPurseToJson(this);
 
   int getCoinAmount(Currencies currency) {
     final holding = holdings.firstWhere(

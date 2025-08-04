@@ -1,6 +1,16 @@
-import 'package:phlegeton_character_finance_manager/core/countries/countries.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-enum Currencies { cp, sp, gp, pp }
+@JsonEnum()
+enum Currencies {
+  @JsonValue('Copper Pieces')
+  cp,
+  @JsonValue('Silver Pieces')
+  sp,
+  @JsonValue('Gold Pieces')
+  gp,
+  @JsonValue('Platinum Pieces')
+  pp,
+}
 
 extension CurrencyProperNames on Currencies {
   String get Archaeos => switch (this) {
