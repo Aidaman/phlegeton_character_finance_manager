@@ -14,7 +14,7 @@ extension AppRouting on AppRoutes {
       };
 
   WidgetBuilder get builder => switch (this) {
-        AppRoutes.homepage => (context) => const Homepage(),
+        AppRoutes.homepage => (context) => Homepage(),
         AppRoutes.characterFinances => (context) => const CharacterFinances(),
       };
 }

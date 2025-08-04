@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:phlegeton_character_finance_manager/core/json.typedef.dart';
-import 'package:phlegeton_character_finance_manager/features/character_purce/purse.dart';
+import 'package:phlegeton_character_finance_manager/features/character_purce/models/purse.dart';
 
 part 'character.g.dart';
 
