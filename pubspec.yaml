@@ -19,6 +19,9 @@ dependencies:
   json_annotation: 4.9.0
 
   build_runner: ^2.4.11
+  path_provider: ^2.1.5
+  uuid: ^4.5.1
+  flutter_svg: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -28,3 +31,14 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - "assets/theme_icons/theme_l_icon.png"
+    - "assets/theme_icons/theme_b_icon.png"
+    - "assets/theme_icons/theme_g_icon.png"
+    - "assets/theme_icons/theme_t_icon.png"
+
+    - "assets/backgrounds/theme_l.svg"
+    - "assets/backgrounds/theme_b.svg"
+    - "assets/backgrounds/theme_g.svg"
+    - "assets/backgrounds/theme_t.svg"
