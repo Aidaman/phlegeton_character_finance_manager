@@ -6,18 +6,18 @@ extension CurrencyExchange on Countries {
   // Археоська валюта є аналогом Долара США в нашому світі
   // Ми відштовхуємсся від курсу валюти Археосу
   static const ExchangeRate exchangeRates = {
-    Countries.archaeos: 1,
+    Countries.archaeos: 1.0,
     Countries.asteristema: 1.5,
     Countries.tenemain: 1.5,
     Countries.yarnagil: 1.3,
     Countries.psavek: 2.5,
     Countries.yagyeTan: 1.2,
-    Countries.kragafor: 2,
+    Countries.kragafor: 2.0,
     Countries.durgadoz: 2.5,
     Countries.nurganor: 2.5,
     Countries.tirigasots: 2.5,
-    Countries.karanor: 3,
-    Countries.minargar: 3,
+    Countries.karanor: 3.0,
+    Countries.minargar: 3.0,
     Countries.longZhiGou: 1.4,
   };
 

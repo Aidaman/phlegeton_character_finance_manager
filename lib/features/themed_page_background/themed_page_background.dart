@@ -12,20 +12,17 @@ class ThemedPageBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        SvgPicture.asset(
-          context.watch<ThemesProvider>().currentTheme.assetBackgroundPath,
-          // alignment: Alignment.center,
-          width: MediaQuery.sizeOf(context).width,
-          height: MediaQuery.sizeOf(context).height,
-          fit: BoxFit.fill,
-        ),
-        Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 8.0,
-            vertical: 16.0,
+        Align(
+          child: SvgPicture.asset(
+            context.watch<ThemesProvider>().currentTheme.assetBackgroundPath,
+            // alignment: Alignment.center,
+            fit: BoxFit.cover,
+            alignment: Alignment.center,
+            width: double.infinity,
+            height: double.infinity,
           ),
-          child: child,
         ),
+        Container(child: child),
       ],
     );
   }
