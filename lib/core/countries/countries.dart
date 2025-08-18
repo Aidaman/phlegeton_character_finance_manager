@@ -70,6 +70,17 @@ extension RegionsNames on Regions {
         Regions.dwarvenKingdoms => currency.Dwarven,
         Regions.longZhiGou => currency.LongZhiGou,
       };
+
+  String getShortCurrencyNamesFor(Currencies currency) => switch (this) {
+        Regions.archaeos => currency.ArchaeosShort,
+        Regions.asteristema => currency.AsteristemaShort,
+        Regions.tenemain => currency.TenemainShort,
+        Regions.tribesOfGiants => currency.YarnagilShort,
+        Regions.psavek => currency.PsavekShort,
+        Regions.yagyeTan => currency.YagyeTanShort,
+        Regions.dwarvenKingdoms => currency.DwarvenShort,
+        Regions.longZhiGou => currency.LongZhiGouShort,
+      };
 }
 
 extension GetRegionsFromCountry on Countries {

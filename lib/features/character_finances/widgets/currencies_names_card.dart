@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:phlegeton_character_finance_manager/core/countries/countries.dart';
@@ -80,9 +78,23 @@ class _CurrenciesNamesCardState extends State<CurrenciesNamesCard> {
               children: Currencies.values
                   .map(
                     (e) => Expanded(
-                      child: Text(
-                        _selectedRegion!.getCurrencyNamesFor(e),
-                        textAlign: TextAlign.center,
+                      child: Column(
+                        children: [
+                          Text(
+                            _selectedRegion!
+                                .getCurrencyNamesFor(e)
+                                .split(' ')
+                                .first,
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            _selectedRegion!
+                                .getCurrencyNamesFor(e)
+                                .split(' ')
+                                .last,
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
                     ),
                   )

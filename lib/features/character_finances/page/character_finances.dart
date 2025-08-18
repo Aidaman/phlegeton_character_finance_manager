@@ -3,9 +3,11 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:phlegeton_character_finance_manager/core/json.typedef.dart';
+import 'package:phlegeton_character_finance_manager/features/character_finances/widgets/character_finances_card.dart';
 import 'package:phlegeton_character_finance_manager/features/character_finances/widgets/currencies_exchange_card.dart';
 import 'package:phlegeton_character_finance_manager/features/character_finances/widgets/currencies_names_card.dart';
 import 'package:phlegeton_character_finance_manager/features/character_purce/models/character.dart';
+import 'package:phlegeton_character_finance_manager/features/character_purce/services/character_io_service.dart';
 import 'package:phlegeton_character_finance_manager/features/character_purce/services/character_service.dart';
 import 'package:phlegeton_character_finance_manager/features/themed_page_background/themed_page_background.dart';
 import 'package:provider/provider.dart';
@@ -46,7 +48,9 @@ class _CharacterFinancesState extends State<CharacterFinances> {
           title: Text(char.name),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                characterIoService.saveCharacter(char);
+              },
               icon: const Icon(Icons.save),
             ),
           ],
@@ -54,30 +58,36 @@ class _CharacterFinancesState extends State<CharacterFinances> {
         body: SingleChildScrollView(
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 16,
                 vertical: 8,
               ),
               child: Column(
                 children: [
-                  Row(
+                  const Row(
                     children: [
                       Expanded(
                         child: CurrenciesNamesCard(),
                       ),
                     ],
                   ),
-                  Gap(32),
-                  Row(
+                  const Gap(32),
+                  const Row(
                     children: [
                       Expanded(
                         child: CurrencyExchangeCard(),
                       ),
                     ],
                   ),
-                  Gap(32),
-                  Card(),
+                  const Gap(32),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: CharacterFinancesCard(character: char),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

@@ -33,18 +33,15 @@ class _CreateCharacterDialogState extends State<CreateCharacterDialog> {
       ),
       actions: [
         TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: const Text('Відмінити'),
+        ),
+        FilledButton(
           onPressed: () {
             context.read<CharacterService>().createCharacter(_newCharacterName);
             Navigator.pop(context);
           },
           child: const Text('Підтвердити'),
-        ),
-        FilledButton(
-          onPressed: () {},
-          style: FilledButton.styleFrom(
-            backgroundColor: Theme.of(context).colorScheme.error,
-          ),
-          child: const Text('Відмінити'),
         ),
       ],
     );

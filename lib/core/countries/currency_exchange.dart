@@ -42,10 +42,6 @@ extension CurrencyExchange on Countries {
       );
     }
 
-    if (this == Countries.archaeos) {
-      return baseAmount / targetRate;
-    }
-
     return (baseAmount / baseRate) * targetRate;
   }
 }

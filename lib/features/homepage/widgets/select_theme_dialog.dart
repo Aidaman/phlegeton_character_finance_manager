@@ -36,7 +36,8 @@ class SelectThemeDialog extends StatelessWidget {
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
-                    context.read<ThemesProvider>().currentTheme = e;
+                    context.read<ThemesProvider>().setTheme(e);
+                    Navigator.pop(context);
                   },
                   child: Container(
                     padding: const EdgeInsets.symmetric(

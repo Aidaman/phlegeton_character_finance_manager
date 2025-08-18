@@ -33,12 +33,8 @@ flutter:
   uses-material-design: true
 
   assets:
-    - "assets/theme_icons/theme_l_icon.png"
-    - "assets/theme_icons/theme_b_icon.png"
-    - "assets/theme_icons/theme_g_icon.png"
-    - "assets/theme_icons/theme_t_icon.png"
-
-    - "assets/backgrounds/theme_l.svg"
-    - "assets/backgrounds/theme_b.svg"
-    - "assets/backgrounds/theme_g.svg"
-    - "assets/backgrounds/theme_t.svg"
+    - "assets/backgrounds/theme_l/"
+    - "assets/backgrounds/theme_g/"
+    - "assets/backgrounds/theme_b/"
+    - "assets/backgrounds/theme_t/"
+    - "assets/theme_icons/"

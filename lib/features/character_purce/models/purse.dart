@@ -38,6 +38,16 @@ class RegionalPurse {
 
   Json toJson() => _$RegionalPurseToJson(this);
 
+  factory RegionalPurse.copyWith(
+    RegionalPurse original, {
+    Regions? region,
+    List<CoinHolding>? coinHolding,
+  }) =>
+      RegionalPurse(
+        region: region ?? original.region,
+        holdings: coinHolding ?? original.holdings,
+      );
+
   int getCoinAmount(Currencies currency) {
     final holding = holdings.firstWhere(
       (h) => h.currency == currency,

@@ -42,11 +42,13 @@ final ButtonStyle _filledButtonStyle = FilledButton.styleFrom(
 class GradientButton extends StatelessWidget {
   final Widget child;
   final VoidCallback? onPressed;
+  final VoidCallback? onLongPress;
 
   const GradientButton({
     super.key,
     required this.child,
     this.onPressed,
+    this.onLongPress,
   });
 
   @override
@@ -64,6 +66,7 @@ class GradientButton extends StatelessWidget {
       child: FilledButton(
         style: _filledButtonStyle,
         onPressed: onPressed,
+        onLongPress: onLongPress,
         child: child,
       ),
     );

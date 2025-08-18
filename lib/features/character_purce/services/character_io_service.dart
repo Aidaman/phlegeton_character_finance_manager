@@ -26,6 +26,18 @@ class CharacterIoService {
     }
   }
 
+  Future removeCharacter(Character character) async {
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      final file = File(
+          '${directory.path}/${AppDirectories.characters.path}/${character.id}.json');
+
+      await file.delete();
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   Future<Character?> loadCharacter(String characterId) async {
     try {
       final directory = await getApplicationDocumentsDirectory();

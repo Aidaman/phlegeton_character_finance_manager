@@ -38,11 +38,16 @@ class _MyAppState extends State<MyApp> {
     await context.read<CharacterService>().loadCharacters();
   }
 
+  _initTheme() async {
+    await context.read<ThemesProvider>().loadTheme();
+  }
+
   @override
   void initState() {
     super.initState();
     _initDirectories();
     _initCharacters();
+    _initTheme();
   }
 
   @override

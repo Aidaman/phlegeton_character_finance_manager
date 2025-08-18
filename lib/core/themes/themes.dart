@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phlegeton_character_finance_manager/core/themes/adaptive_layouting.dart';
 
 enum Themes {
   themeL,
@@ -22,11 +23,27 @@ extension ThemesData on Themes {
         Themes.themeT => 'Тема Т',
       };
 
-  String get assetBackgroundPath => switch (this) {
-        Themes.themeL => 'assets/backgrounds/theme_l.svg',
-        Themes.themeG => 'assets/backgrounds/theme_g.svg',
-        Themes.themeB => 'assets/backgrounds/theme_b.svg',
-        Themes.themeT => 'assets/backgrounds/theme_t.svg',
+  static Themes fromName(String name) => switch (name.toLowerCase()) {
+        'тема л' => Themes.themeL,
+        'тема г' => Themes.themeG,
+        'тема б' => Themes.themeB,
+        'тема т' => Themes.themeT,
+        String() => Themes.themeB,
+      };
+
+  String get assetBackgroundThemePath => switch (this) {
+        Themes.themeL => 'assets/backgrounds/theme_l/',
+        Themes.themeG => 'assets/backgrounds/theme_g/',
+        Themes.themeB => 'assets/backgrounds/theme_b/',
+        Themes.themeT => 'assets/backgrounds/theme_t/',
+      };
+
+  String getBackgroundImage(BuildContext context) =>
+      switch (context.screenSize) {
+        ScreenSizes.mobile => '430x1000.png',
+        ScreenSizes.mobileLarge => '1024x2048.png',
+        ScreenSizes.desktop => '1440x900.png',
+        ScreenSizes.desktopLarge => '4096x2304.png',
       };
 
   String get assetIconPath => switch (this) {
@@ -46,7 +63,7 @@ ThemeData _themeL = ThemeData(
     onSecondary: Color(0xFFFCFEFB),
     error: Colors.deepOrange,
     onError: Color(0xFFFCFEFB),
-    surface: Color(0x001A1A1A),
+    surface: Color(0xFF1A1A1A),
     onSurface: Color(0xFFFCFEFB),
   ),
 );
